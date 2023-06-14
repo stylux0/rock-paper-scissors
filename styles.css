@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+h1{
+    border: solid 2px black;
+    margin: 20px;
+    text-align: center;
+}
+
+main{
+    display: flex;
+    border: solid 2px black;
+    flex-direction: column;
+    min-height: 500px;
+    
+}
+
+.scores{
+    align-self: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.table-info{
+    align-self: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+#buttons{
+    padding: 15px;
+    margin: 20px;
+    display: flex;
+    gap: 20px;
+    background-color: rgb(144, 237, 144);
+    border-radius: 10px;
+    align-self: center;
+    min-height: 350px;
+    min-width: 600px;
+}   
+
+
+#rock{
+    background: url("https://media.gq.com.mx/photos/61dc5f86726f062e8a32d51b/16:9/w_2560%2Cc_limit/GettyImages-1024910974.jpg");
+    background-size: cover;
+}  
+
+.btn{
+    margin: 20px;
+    
+    
+    border-radius: 20px;
+    height: 300px;
+    width: 200px;
+    
+    min-height: 300px;
+    min-width: 200px;
+   
+    transition: all 0.5s;
+    border: none;
+    cursor: pointer;
+    
+    
+
+    
+}
+
+
+.btn:hover{
+    transform: translateY(-10px);
+    
+   
+}
+
+.btn:click{
+    background-color: aqua;
+}
