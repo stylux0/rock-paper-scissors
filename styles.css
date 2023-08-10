@@ -1,18 +1,32 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: rgb(90,11,222);
+    background: linear-gradient(263deg, rgb(63, 8, 157) 0%, rgba(8,130,245,1) 50%, rgba(90,11,222,1) 100%);
 }
 
 
 h1{
-    border: solid 2px black;
+    
     margin: 20px;
     text-align: center;
+    font-size: 75px;
+    text-shadow: 2px 2px rgb(113, 16, 130);
+    color: rgb(242, 242, 242);
+}
+
+h2{
+    margin: 10px;
+    text-align: center;
+    text-shadow: 1px 1px black;
 }
 
 main{
     display: flex;
-    border: solid 2px black;
     flex-direction: column;
     min-height: 500px;
     
@@ -22,12 +36,31 @@ main{
     align-self: center;
     padding: 20px;
     font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.175) ;
+    box-shadow: 0px 2px 10px black;
+    color: white;
+    margin: 10px;
+    width: 200px;
+}
+
+
+.table-info > p{
+    margin: 10px;
 }
 
 .table-info{
     align-self: center;
-    padding: 10px;
-    font-size: 30px;
+    padding: 40px;
+    margin: 10px;
+    font-size: 35px;
+    color:white;
+    border: 1px solid white ;
+    box-shadow: 5px 5px 10px  inset black;
+    background-color: rgba(111, 115, 118, 0.254);
+    width: 600px;
+    height: 150px;
+    
+    text-shadow: 2px 0px 1px black;
 }
 
 #buttons{
@@ -35,28 +68,38 @@ main{
     margin: 20px;
     display: flex;
     gap: 20px;
-    background-color: rgb(144, 237, 144);
+    background-color: rgba(220, 98, 224, 0.257);
     border-radius: 10px;
     align-self: center;
-    min-height: 350px;
-    min-width: 600px;
+    
+    box-shadow: 10px 2px 5px black;
 }   
 
 
 #rock{
-    background: url("https://media.gq.com.mx/photos/61dc5f86726f062e8a32d51b/16:9/w_2560%2Cc_limit/GettyImages-1024910974.jpg");
+    background: url("https://m.media-amazon.com/images/I/71lkx+IsNgL.png");
     background-size: cover;
-}  
+}
+
+#paper{
+    background: url("https://m.media-amazon.com/images/I/71LOHamXEYL.png");
+    background-size: cover;
+}
+
+#scissors{
+    background: url("https://m.media-amazon.com/images/I/71W8Y-olwUL.png");
+    background-size: cover;
+}
 
 .btn{
     margin: 20px;
     
     
     border-radius: 20px;
-    height: 300px;
+    height: 270px;
     width: 200px;
     
-    min-height: 300px;
+    min-height: 100px;
     min-width: 200px;
    
     transition: all 0.5s;
@@ -70,11 +113,14 @@ main{
 
 
 .btn:hover{
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.436);
+   
     
    
 }
 
-.btn:click{
-    background-color: aqua;
+.btn:active{
+    transform: scale(0.9,0.9);
+    
 }

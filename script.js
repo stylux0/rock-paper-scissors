@@ -1,5 +1,6 @@
 const selectWinner = document.querySelector("#select-winner");
 const computerChoose = document.querySelector("#computer-choose");
+const playerChoose = document.querySelector('#player-choose');
 const btns = document.querySelectorAll('.btn');
 const textpointsPlayer = document.querySelector('#player-score');
 const textPointsComputer = document.querySelector('#computer-score');
@@ -10,22 +11,33 @@ let pointsComputer = 0;
 
 btns.forEach(btn => {
     btn.addEventListener('click',(e)=>{
-        
-        let currentWinnter = playRound(playerSelection,computerSelection);
-        playerSelection = e.target.id;
         computerSelection = getComputerChoise();
-        computerChoose.innerHTML = "Computer selection: " + computerSelection;
+        playerSelection = e.target.id;
+        let currentWinnter = playRound(playerSelection,computerSelection);
+        styleTextWinnter(currentWinnter);
+        
+        
+        let computerTextSelecction = getTextComputerSelecction(computerSelection);
+        computerChoose.innerHTML = "Computer: " + computerTextSelecction;
+        playerChoose.innerText = "Player: " + getTextComputerSelecction(playerSelection);
         
         selectWinner.innerText = "winner is: " + currentWinnter;
         addPoint(currentWinnter);
-        textpointsPlayer.innerText = `Player points: ${pointsPlayer}`;
-        textPointsComputer.innerText = `Computer points: ${pointsComputer}`;
+        if(currentWinnter === "player") textpointsPlayer.innerText += '✔';
+        if(currentWinnter === "computer") textPointsComputer.innerText += '✔';
+        
         if (pointsPlayer >= 5 || pointsComputer >=5 ) {
-            alert(`The winner is ${currentWinnter}`)
+           
+            
             pointsComputer = 0;
             pointsPlayer = 0;
-            textpointsPlayer.innerText = `Player points: ${pointsPlayer}`;
-            textPointsComputer.innerText = `Computer points: ${pointsComputer}`;
+            alert(`The winner is ${currentWinnter}`)
+            textpointsPlayer.innerText = 'Player: ';
+            textPointsComputer.innerText = 'Computer: ';
+            selectWinner.innerText = '';
+            computerChoose.innerHTML = "Computer: ";
+            playerChoose.innerText = "Player: ";
+            
         }
         
     },false )
@@ -78,5 +90,18 @@ function getComputerChoise(){
     let collectionChoise = ["rock","paper","scissors"];
     let positionToSend = Math.floor(Math.random() * collectionChoise.length);
     return collectionChoise[positionToSend];
+}
+
+function getTextComputerSelecction(selection){
+    if(selection === "scissors") return "✌";
+    if(selection === "rock") return "✊"; 
+    if(selection === "paper") return "👋";
+
+}
+
+function styleTextWinnter(currentWinnter){
+    if (currentWinnter === "computer") selectWinner.style.color = "red";
+    else if(currentWinnter === "player") selectWinner.style.color = "green";
+    else selectWinner.style.color = "yellow";
 }
 
